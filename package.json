@@ -1,0 +1,22 @@
+{
+    "name": "electron-tutorial",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "rebuild": "./node_modules/.bin/electron-rebuild -w sqlite3 -p"
+    },
+    "author": "aqdas95 <aqdasmalikcs@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "autocompleter": "^4.0.2",
+        "awesomplete": "^1.1.4",
+        "electron": "^4.0.5",
+        "knex": "^0.16.3",
+        "sqlite3": "^4.0.6"
+    },
+    "devDependencies": {
+        "electron-rebuild": "^1.8.4"
+    }
+}

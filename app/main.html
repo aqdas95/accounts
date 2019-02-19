@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title></title>
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body class="col-lg-12">
+    <div class="col-lg-4">
+
+        <!-- <input class="col-lg-6" id="add-account" type="text" name="myCountry" placeholder="Addition Account">
+        <input class="col-lg-6" id="sub-account" type="text" name="myCountry" placeholder="Subtraction Account">
+        <input id="amount" type="number" name="amount" placeholder="Amount">
+        <button class="btn btn-primary"> Add Transaction </button> -->
+
+        <form class="form col-lg-8 col-lg-offset-2">
+            <h3>Transaction Form</h3>
+            <input class="form-control" id="add-account" placeholder="Addition Account Id">
+            <input class="form-control" id="sub-account" placeholder="Subtraction Account Id">
+            <input class="form-control" id="amount" placeholder="Amount">
+            <input class="form-control" type="date" id="transaction-date" placeholder="Transaction Date">
+            <button class="btn btn-primary col-lg-12" id="transaction-add-btn" onclick="addTransaction()"> Save </button>
+        </form>
+        <hr/>
+        <form class="form col-lg-8 col-lg-offset-2">
+            <h3>Account Add Form</h3>
+            <input class="form-control" id="acc-name" placeholder="Name">
+            <input class="form-control" id="acc-opening-balance" placeholder="Opening Balance">
+            <button class="btn btn-primary col-lg-12" onclick="addAccount()"> Save </button>
+        </form>
+
+    </div>
+    <div class="col-lg-8">
+        <h3>Accounts List</h3>
+        <input type="text" class="form-control col-lg-10" id="tableSearchInput" onkeyup="searchTable()" placeholder="Search for names..">
+        <table class="table table-striped col-lg-10" id="result">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Opening Balance</th>
+                <th>Current Balance</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
