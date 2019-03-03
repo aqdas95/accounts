@@ -13,37 +13,61 @@
         <input class="col-lg-6" id="sub-account" type="text" name="myCountry" placeholder="Subtraction Account">
         <input id="amount" type="number" name="amount" placeholder="Amount">
         <button class="btn btn-primary"> Add Transaction </button> -->
-
-        <form class="form col-lg-8 col-lg-offset-2">
-            <h3>Transaction Form</h3>
-            <input class="form-control" id="add-account" placeholder="Addition Account Id">
-            <input class="form-control" id="sub-account" placeholder="Subtraction Account Id">
-            <input class="form-control" id="amount" placeholder="Amount">
-            <input class="form-control" type="date" id="transaction-date" placeholder="Transaction Date">
-            <button class="btn btn-primary col-lg-12" id="transaction-add-btn" onclick="addTransaction()"> Save </button>
-        </form>
+        <div class="col-lg-12">
+            <form class="form col-lg-6">
+                <h3>Account Add Form</h3>
+                <input class="form-control" id="acc-name" placeholder="Name">
+                <input class="form-control" id="acc-opening-balance" type="number" placeholder="Opening Balance">
+                <button class="btn btn-primary col-lg-12" onclick="addAccount()"> Save </button>
+            </form>
+            <form class="form col-lg-6">
+                <h3>Transaction Form</h3>
+                <div class="input-group">
+                    <div class="input-group-addon">+</div>
+                    <input class="form-control col-lg-1" id="add-account" type="number" placeholder="Id">
+                    <div class="input-group-addon">-</div>
+                    <input class="form-control col-lg-1" id="sub-account" type="number" placeholder="Id">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-addon">PKR</div>
+                    <input class="form-control" id="amount" type="number" placeholder="Amount">
+                </div>
+                <input class="form-control" type="date" id="transaction-date" placeholder="Transaction Date">
+                <textarea class="form-control" type="text" id="notes" placeholder="Notes e.g. bill no. etc"></textarea>
+                <button class="btn btn-primary col-lg-12" onclick="addTransaction()"> Save </button>
+            </form>
+        </div>
+        <br>
         <hr/>
-        <form class="form col-lg-8 col-lg-offset-2">
-            <h3>Account Add Form</h3>
-            <input class="form-control" id="acc-name" placeholder="Name">
-            <input class="form-control" id="acc-opening-balance" placeholder="Opening Balance">
-            <button class="btn btn-primary col-lg-12" onclick="addAccount()"> Save </button>
-        </form>
-
-    </div>
-    <div class="col-lg-8">
         <h3>Accounts List</h3>
         <input type="text" class="form-control col-lg-10" id="tableSearchInput" onkeyup="searchTable()" placeholder="Search for names..">
         <table class="table table-striped col-lg-10" id="result">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Opening Balance</th>
-                <th>Current Balance</th>
-                <th>Action</th>
+                <th class="text-center">Id</th>
+                <th class="text-center">Name</th>
+                <th class="text-center">Balance</th>
+                <th class="text-center">Action</th>
             </tr>
         </table>
     </div>
+    <div class="col-lg-8">
+        <div id="printDiv">
+            <h3>Account Details <span id='accountName'></span></h3>
+            <table class="table table-striped col-lg-10" id="details">
+                <tr>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">Notes</th>
+                    <th class="text-center">Added</th>
+                    <th class="text-center">Subtracted</th>
+                    <th class="text-center">Balance</th>
+                </tr>
+            </table>
+        </div>
+        <button class="btn btn-primary" onclick="printElem()">Print</button>
+    </div>
+
 
     <script src="js/main.js"></script>
 </body>
